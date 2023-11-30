@@ -44,3 +44,6 @@ dev.off()  # Close the device when done
 # Which have seen increases in emissions from 1999–2008? 
 # Use the ggplot2 plotting system to make a plot answer this question.
 
+
+
+
