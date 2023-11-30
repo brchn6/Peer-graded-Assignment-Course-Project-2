@@ -43,6 +43,22 @@ dev.off()  # Close the device when done
 # , which of these four sources have seen decreases in emissions from 1999–2008 for Baltimore City? 
 # Which have seen increases in emissions from 1999–2008? 
 # Use the ggplot2 plotting system to make a plot answer this question.
+# Load the ggplot2 library
+library(ggplot2)
 
+# Subset the data for Baltimore City, Maryland (fips == "24510") and select relevant columns
 subset_data_on_24510 <- NEI[NEI$fips == "24510", c("fips", "year", "Emissions", "type")]
-head(subset_data_on_24510)
+
+# Get unique types
+type_values <- unique(subset_data_on_24510$type)
+type_values
+# Create a ggplot object
+
+  p <- ggplot(data = sum_by_year, aes(x = year, y = Emissions)) +
+    geom_line() +
+    labs(x = "Year", y = "Total Emissions",
+         title = paste("Total Emissions by Year for Type", type))
+         + facet_wrap(~type, ncol = 2)
+
+# Save or display the plot
+ggsave("Q3plot.png", p)
