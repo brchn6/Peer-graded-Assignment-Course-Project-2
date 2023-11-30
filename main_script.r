@@ -25,10 +25,10 @@ dev.off()  # Close the device when done
 
 # total emissions from PM2.5 decreased in the Baltimore City, Maryland (fips == "24510") from 1999 to 2008?
 # Subset the data for Baltimore City, Maryland (fips == "24510") and select relevant columns
-subset_data <- NEI[NEI$fips == "24510", c("year", "Emissions")]
+subset_data_on_24510 <- NEI[NEI$fips == "24510", c("year", "Emissions")]
 
 # Calculate the sum of emissions by year
-sum_by_year <- aggregate(Emissions ~ year, data = subset_data, sum)
+sum_by_year <- aggregate(Emissions ~ year, data = subset_data_on_24510, sum)
 
 # Create a bar plot and save it to a PNG file
 png("Q2plot.png")
@@ -44,5 +44,5 @@ dev.off()  # Close the device when done
 # Which have seen increases in emissions from 1999–2008? 
 # Use the ggplot2 plotting system to make a plot answer this question.
 
-
-
+subset_data_on_24510 <- NEI[NEI$fips == "24510", c("fips", "year", "Emissions", "type")]
+head(subset_data_on_24510)
