@@ -8,6 +8,8 @@ head(NEI$Emissions)
 head(NEI$year)
 
 
+#Q number 1
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # plot showing the total PM2.5 emission from all sources for each of the years 1999, 2002, 2005, and 2008
 data <- NEI[, c("Emissions", "year")]
 head(data)
@@ -24,6 +26,8 @@ barplot(sum_by_year$Emissions, names.arg = sum_by_year$year,
 dev.off()  # Close the device when done
 
 
+#Q number 2
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 # total emissions from PM2.5 decreased in the Baltimore City, Maryland (fips == "24510") from 1999 to 2008?
 # Subset the data for Baltimore City, Maryland (fips == "24510") and select relevant columns
@@ -40,7 +44,8 @@ barplot(sum_by_year$Emissions, names.arg = sum_by_year$year,
 dev.off()  # Close the device when done
 
 
-
+#Q number 3
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # Of the four types of sources indicated by the  type (point, nonpoint, onroad, nonroad) variable
 # , which of these four sources have seen decreases in emissions from 1999–2008 for Baltimore City? 
 # Which have seen increases in emissions from 1999–2008? 
